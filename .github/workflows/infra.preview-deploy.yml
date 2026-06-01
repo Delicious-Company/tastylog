@@ -19,7 +19,7 @@ env:
 defaults:
   run:
     shell: bash
-    working-directory: '10_infra'
+    working-directory: '10_infra/'
 
 jobs:
   preview:
@@ -27,7 +27,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actons/checkout@v6
+        uses: actions/checkout@v6
       - name: Setup terraform
         uses: hashicorp/setup-terraform@v4
         with:
