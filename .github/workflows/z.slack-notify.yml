@@ -14,17 +14,15 @@ jobs:
           channel-id: 'C0B8CR2LQDA'
           payload: |
             {
-              {
-                "blocks": [
-                  {
-                    "type": "section",
-                    "text": {
-                      "type": "mrkdwn",
-                      "text": "Hello World :ghost:"
-                    }
+              "blocks": [
+                {
+                  "type": "section",
+                  "text": {
+                    "type": "mrkdwn",
+                    "text": "Hello World :ghost:"
                   }
-                ]
-              }
+                }
+              ]
             }
         env:
           SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
