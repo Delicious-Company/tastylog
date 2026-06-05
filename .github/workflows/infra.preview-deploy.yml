@@ -65,6 +65,7 @@ jobs:
             -no-color \
             -detailed-exitcode
           echo "exitcode=$?" >> "$GITHUB_OUTPUT"
+          echo "exitcode=$?"
       - name: Slack notify
         uses: slackapi/slack-github-action@v1.22.0
         with:
