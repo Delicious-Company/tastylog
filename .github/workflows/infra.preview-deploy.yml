@@ -64,7 +64,6 @@ jobs:
             -input=false \
             -no-color \
             -detailed-exitcode
-          echo $?
           EXIT_CODE=$?
           echo "exitcode=$EXIT_CODE" >> "$GITHUB_OUTPUT"
           echo "exitcode=$EXIT_CODE"
