@@ -64,10 +64,8 @@ jobs:
             -input=false \
             -no-color \
             -detailed-exitcode
-          echo "$?"
-          # EXIT_CODE=$?
-          # echo "exitcode=$EXIT_CODE" >> "$GITHUB_OUTPUT"
-          # echo "exitcode=$EXIT_CODE"
+          EXIT_CODE=$?
+          echo "exitcode=$EXIT_CODE" >> "$GITHUB_OUTPUT"
       - name: Slack notify
         uses: slackapi/slack-github-action@v1.22.0
         with:
@@ -96,7 +94,7 @@ jobs:
   deploy:
     name: 'Deploy'
     needs: preview
-    if: needs.preview.outputs.TF_PLAN_EXITCODE == 2
+    if: needs.preview.outputs.TF_PLAN_EXITCODE == '2'
     environment: production
     runs-on: ubuntu-latest
     steps:
