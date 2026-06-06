@@ -67,6 +67,7 @@ jobs:
           EXIT_CODE=$?
           echo "exitcode=$EXIT_CODE" >> "$GITHUB_OUTPUT"
       - name: Slack notify
+        if: steps.plan.outputs.exitcode == '2'
         uses: slackapi/slack-github-action@v1.22.0
         with:
           channel-id: 'C0B8CR2LQDA'
